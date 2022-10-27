@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue To Do List</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
      <!-- Vue.js -->
      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- CSS -->
@@ -21,20 +23,28 @@
             </div>
             <div class="form">
                 <label for="text-input">Aggiungi alla lista</label>
-                <input type="text" id="text-input" placeholder="Add to list">
-                <button id="btn-input">Inserisci</button>
+                <input 
+                type="text" 
+                id="text-input" 
+                placeholder="Add to list" 
+                v-model.trim="inserList"
+                @keyup.enter="addText"
+                >
+                <button id="btn-input" @click="addText">Inserisci</button>
             </div>
         </header>
 
         <main>
             <div class="to-list">
-                <div class="list">
-                    <h3>Fare la spesa</h3>
-                    <p>&check;</p>
-                </div>
-                <div class="list">
-                    <h3>Fare la spesa</h3>
-                    <p>&check;</p>
+                <div class="list" v-for="(inner, index) in todoList">
+                    <h3 
+                    :class="inner.done ? 'line': '' "
+                    @click="isDone(index)"
+                    >
+                    {{inner.text}}
+                    </h3>
+                    <i class="fa-solid fa-xmark"@click="removeInList(index)"></i>
+                    
                 </div>
             </div>
         </main>
