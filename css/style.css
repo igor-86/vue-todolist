@@ -4,3 +4,72 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    font-family: sans-serif;
+}
+/* Header */
+header {
+    width: 100%;
+    
+}
+.logo {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 0;
+}
+.logo > h3{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-left: 1rem;
+}
+.box-img > img {
+    width: 100px;
+    height: 100px;
+}
+/* Form */
+label {
+    display: none;
+}
+.form {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+#text-input {
+    padding: .5rem .9rem;
+    border-radius: 50rem;
+    border: none;
+    box-shadow: -3px 1px 20px -4px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+#btn-input {
+    margin-left: 1rem;
+    padding: .5rem .9rem;
+    border-radius: 50rem;
+    background-color: #8ce803;
+    border: none;
+    box-shadow: -3px 1px 20px -4px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+/* To do list */
+.to-list {
+    width: 75%;
+    margin: 0 auto;
+    
+    margin-top: 1.5em;
+}
+.list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 1.5rem;
+    background-color:#8ce803;
+    margin-bottom: 1rem;
+}
